@@ -3,11 +3,11 @@ from collections import deque
 
 def BFS(a, b, target):
  
-    m = {}
-    isSolvable = False
-    path = []
+    m = {}  #A dictionary to track visited states so as to prevent reprocessing.
+    isSolvable = False  #This is a flag to indicate if a solution is found
+    path = []   #This is a list to store the sequence of states leading to the solution
  
-    q = deque()
+    q = deque() #A queue to handle states in the algorithm
  
     q.append((0, 0))
  
@@ -46,13 +46,13 @@ def BFS(a, b, target):
         q.append([a, u[1]])  # Fill Jug1
  
         for ap in range(max(a, b) + 1):
- 
+            #Transfers water from Jug2 to Jug1 until Jug1 is full or Jug2 is empty.
             c = u[0] + ap
             d = u[1] - ap
  
             if c == a or (d == 0 and d >= 0):
                 q.append([c, d])
- 
+            #Transfers water from Jug1 to Jug2 until Jug2 is full or Jug1 is empty.
             c = u[0] - ap
             d = u[1] + ap
  
@@ -67,7 +67,7 @@ def BFS(a, b, target):
         print("No solution")
 
 
-jug_a = 4
+jug_a = 5
 jug_b = 3
 target_level =2
 

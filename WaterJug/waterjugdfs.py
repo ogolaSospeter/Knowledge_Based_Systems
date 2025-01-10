@@ -1,6 +1,6 @@
 # Define capacities
-jug1_capacity = 3
-jug2_capacity = 4
+jug1_capacity = 5
+jug2_capacity = 3
 initial_state = (0, 0)  # (amount in jug1, amount in jug2)
 
 def possible_actions(state):
